@@ -1,12 +1,12 @@
 pipeline {
-    agent { 
-      dockerfile {
-        args '-t aa'
-      }
+    environment{
+        DOCKERHUB_CREDENTIALS = credentials('taquan17-dockerhub')
     }
     stages {
-        stage('Test') {
-            echo 'successful'
+        stage('Build') {
+            step{
+                sh 'docker build -t aa .'
+            }
         }
     }
 }
