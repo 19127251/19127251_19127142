@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     environment{
         DOCKERHUB_CREDENTIALS = credentials('taquan17-dockerhub')
     }
