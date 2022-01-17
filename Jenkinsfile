@@ -1,6 +1,6 @@
 pipeline {
     agent{
-        label "linux"
+        dockerfile true
     }
     environment{
         DOCKERHUB_CREDENTIALS = credentials('taquan17-dockerhub')
