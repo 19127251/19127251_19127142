@@ -1,6 +1,7 @@
-pipeline {
+node('docker'){
+    pipeline {
     agent{
-        label 'docker'
+        dockerfile true
     }
     environment{
         DOCKERHUB_CREDENTIALS = credentials('taquan17-dockerhub')
