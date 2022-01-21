@@ -6,15 +6,15 @@ pipeline {
   stages {
       stage('Build') {
         steps {
-          bat 'docker build -t mmt_image:$BUILD_NUMBER .'
+          bat 'docker build -t mmt_image .'
         }
       }
     
       stage('Push Image') {
         steps {                
           withDockerRegistry([ credentialsId: "dockerhub_id", url: "" ]){
-            bat 'docker tag mmt_image:$BUILD_NUMBER duchieuvn/mmt_image:$BUILD_NUMBER'
-            bat 'docker push duchieuvn/mmt_image:$BUILD_NUMBER'
+            bat 'docker tag mmt_image duchieuvn/mmt_image'
+            bat 'docker push duchieuvn/mmt_image'
           }
         }
       }
