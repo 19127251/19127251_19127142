@@ -1,3 +1,3 @@
 FROM python:3.8
-COPY TEST.py /TEST.py
-CMD ["python","./TEST.py"]
+COPY program.py /program.py
+CMD ["python","./program.py"]
