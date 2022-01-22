@@ -13,8 +13,8 @@ pipeline {
       stage('Push Image') {
         steps {                
           withDockerRegistry([ credentialsId: "dockerhub_id", url: "" ]){
-            bat 'docker tag demo_image taquan17/demo_image'
-            bat 'docker push taquan17/demo_image'
+            bat 'docker tag demo_image duchieuvn/demo_image'
+            bat 'docker push duchieuvn/demo_image'
           }
         }
       }
